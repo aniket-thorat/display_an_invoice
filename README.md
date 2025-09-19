@@ -14,13 +14,19 @@ This is a .NET 8 Web API application that displays invoice data with a web front
 ## 📱 Application Screenshots
 
 ### Main Invoice Display UI
+
 ![Invoice Display UI](./screenshots/invoice_display.png)
-*The main application interface showing invoice details and items*
+_The main application interface showing invoice details and items_
 
 ### Swagger API Documentation
-![Swagger API Documentation](./screenshots/swagger.png)
-*Interactive API documentation with testable endpoints*
 
+![Swagger API Documentation](./screenshots/swagger.png)
+_Interactive API documentation with testable endpoints_
+
+### Swagger API Response Screenshot
+
+![Swagger API Response](./screenshots/swagger-api-response.png)
+_Interactive API documentation with testable endpoints_
 
 ## Prerequisites
 
@@ -30,17 +36,21 @@ This is a .NET 8 Web API application that displays invoice data with a web front
 ## 🚀 Running the Application
 
 ### Option 1: Direct .NET Run
+
 1. **Restore dependencies:**
+
    ```bash
    dotnet restore
    ```
 
 2. **Build the application:**
+
    ```bash
    dotnet build
    ```
 
 3. **Run the application:**
+
    ```bash
    dotnet run
    ```
@@ -51,6 +61,7 @@ This is a .NET 8 Web API application that displays invoice data with a web front
    - **API Endpoint:** http://localhost:5000/api/invoice
 
 ### Option 2: Docker (Recommended)
+
 ```bash
 # Using Docker Compose
 docker-compose up --build
@@ -61,6 +72,7 @@ docker run -d -p 8080:80 --name invoice-app-container invoice-app
 ```
 
 **Docker Access URLs:**
+
 - **Frontend:** http://localhost:8080
 - **Swagger:** http://localhost:8080/swagger
 - **API:** http://localhost:8080/api/invoice
@@ -68,10 +80,12 @@ docker run -d -p 8080:80 --name invoice-app-container invoice-app
 ## 🔌 API Endpoints
 
 ### Available Endpoints
+
 - `GET /api/invoice` - Returns invoice data with items
 - `GET /api/data` - Returns sample data
 
 ### Sample API Response
+
 ```json
 {
   "invoiceID": 1,
@@ -104,6 +118,7 @@ docker run -d -p 8080:80 --name invoice-app-container invoice-app
 The application uses SQLite database with Entity Framework Core. The database file (`invoices.db`) will be created automatically when the application runs for the first time.
 
 ### Database Schema
+
 - **Invoices Table**: Stores invoice information (ID, Customer Name)
 - **InvoiceItems Table**: Stores individual items (ID, Invoice ID, Name, Price)
 
@@ -131,6 +146,7 @@ The application uses SQLite database with Entity Framework Core. The database fi
 ## 🚀 Deployment Options
 
 ### Docker Deployment (Recommended)
+
 ```bash
 # Build and run with Docker Compose
 docker-compose up --build
@@ -141,7 +157,9 @@ docker run -d -p 8080:80 --name invoice-app-container invoice-app
 ```
 
 ### Traditional Deployment
+
 1. **Publish the application:**
+
    ```bash
    dotnet publish -c Release -o ./publish
    ```
@@ -153,6 +171,7 @@ docker run -d -p 8080:80 --name invoice-app-container invoice-app
    ```
 
 ### Cloud Deployment
+
 - **AWS Elastic Beanstalk**: Upload deployment package
 - **Azure App Service**: Deploy via Visual Studio or Azure CLI
 - **Google Cloud Run**: Use Docker container
