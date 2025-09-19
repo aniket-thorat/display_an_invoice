@@ -117,54 +117,8 @@ The application uses SQLite database with Entity Framework Core. The database fi
 └── README.md           # This file
 ```
 
-## 🚀 Deployment Options
-
-### Docker Deployment (Recommended)
-
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
-
-# Or build and run manually
-docker build -t invoice-app .
-docker run -d -p 8080:80 --name invoice-app-container invoice-app
-```
-
-### Traditional Deployment
-
-1. **Publish the application:**
-
-   ```bash
-   dotnet publish -c Release -o ./publish
-   ```
-
-2. **Run the published application:**
-   ```bash
-   cd publish
-   dotnet InvoiceApp.dll
-   ```
-
-### Cloud Deployment
-
-- **AWS Elastic Beanstalk**: Upload deployment package
-- **Azure App Service**: Deploy via Visual Studio or Azure CLI
-- **Google Cloud Run**: Use Docker container
-
-## 📸 Screenshots Directory
-
-To add screenshots to this README:
-
-1. Create a `screenshots/` directory in your project
-2. Take screenshots of:
-   - Main application UI (`invoice-ui.png`)
-   - Swagger API documentation (`swagger-api.png`)
-   - API response in browser/Postman (`api-response.png`)
-3. Place them in the `screenshots/` folder
-
 ## 📝 Notes
 
 - ✅ The application includes sample invoice data that is seeded automatically
 - ⚠️ CORS is configured to allow all origins (configure appropriately for production)
 - ✅ The database is created automatically on first run
-- ✅ Docker support included for easy deployment
-- ✅ Production-ready configuration
