@@ -2,20 +2,37 @@
 
 This is a .NET 8 Web API application that displays invoice data with a web frontend.
 
-## Features
+## 🎯 Features
 
-- RESTful API with Swagger documentation
-- SQLite database with Entity Framework Core
-- Web frontend displaying invoice items
-- CORS enabled for cross-origin requests
+- ✅ RESTful API with Swagger documentation
+- ✅ SQLite database with Entity Framework Core
+- ✅ Modern web frontend displaying invoice items
+- ✅ CORS enabled for cross-origin requests
+- ✅ Docker containerization support
+- ✅ Production-ready deployment configuration
+
+## 📱 Application Screenshots
+
+### Main Invoice Display UI
+![Invoice Display UI](screenshots/invoice-ui.png)
+*The main application interface showing invoice details and items*
+
+### Swagger API Documentation
+![Swagger API Documentation](screenshots/swagger-api.png)
+*Interactive API documentation with testable endpoints*
+
+### API Response Example
+![API Response](screenshots/api-response.png)
+*Sample JSON response from the invoice API endpoint*
 
 ## Prerequisites
 
 - .NET 8 SDK
 - Visual Studio Code or Visual Studio (optional)
 
-## Running the Application
+## 🚀 Running the Application
 
+### Option 1: Direct .NET Run
 1. **Restore dependencies:**
    ```bash
    dotnet restore
@@ -36,31 +53,97 @@ This is a .NET 8 Web API application that displays invoice data with a web front
    - **API Documentation (Swagger):** http://localhost:5000/swagger
    - **API Endpoint:** http://localhost:5000/api/invoice
 
-## API Endpoints
+### Option 2: Docker (Recommended)
+```bash
+# Using Docker Compose
+docker-compose up --build
 
+# Or using Docker directly
+docker build -t invoice-app .
+docker run -d -p 8080:80 --name invoice-app-container invoice-app
+```
+
+**Docker Access URLs:**
+- **Frontend:** http://localhost:8080
+- **Swagger:** http://localhost:8080/swagger
+- **API:** http://localhost:8080/api/invoice
+
+## 🔌 API Endpoints
+
+### Available Endpoints
 - `GET /api/invoice` - Returns invoice data with items
 - `GET /api/data` - Returns sample data
 
-## Database
+### Sample API Response
+```json
+{
+  "invoiceID": 1,
+  "customerName": "John Doe",
+  "items": [
+    {
+      "itemID": 1,
+      "invoiceID": 1,
+      "name": "Widget A",
+      "price": 19.99
+    },
+    {
+      "itemID": 2,
+      "invoiceID": 1,
+      "name": "Widget B",
+      "price": 29.99
+    },
+    {
+      "itemID": 3,
+      "invoiceID": 1,
+      "name": "Widget C",
+      "price": 39.99
+    }
+  ]
+}
+```
+
+## 🗄️ Database
 
 The application uses SQLite database with Entity Framework Core. The database file (`invoices.db`) will be created automatically when the application runs for the first time.
 
-## Project Structure
+### Database Schema
+- **Invoices Table**: Stores invoice information (ID, Customer Name)
+- **InvoiceItems Table**: Stores individual items (ID, Invoice ID, Name, Price)
+
+## 📁 Project Structure
 
 ```
 ├── Controllers/          # API Controllers
+│   ├── DataController.cs
+│   └── InvoiceController.cs
 ├── Data/                # Entity Framework Context
+│   └── InvoiceContext.cs
 ├── Models/              # Data Models
+│   └── Invoice.cs
 ├── wwwroot/             # Static files (HTML, CSS, JS)
+│   ├── index.html
+│   ├── script.js
+│   └── styles.css
+├── Dockerfile           # Docker configuration
+├── docker-compose.yml   # Docker Compose setup
 ├── Program.cs           # Application entry point
 ├── InvoiceApp.csproj    # Project file
 └── README.md           # This file
 ```
 
-## Deployment
+## 🚀 Deployment Options
 
-For production deployment, you can:
+### Docker Deployment (Recommended)
+```bash
+# Build and run with Docker Compose
+docker-compose up --build
 
+# Or build and run manually
+docker build -t invoice-app .
+docker run -d -p 8080:80 --name invoice-app-container invoice-app
+```
+
+### Traditional Deployment
 1. **Publish the application:**
    ```bash
    dotnet publish -c Release -o ./publish
@@ -72,8 +155,26 @@ For production deployment, you can:
    dotnet InvoiceApp.dll
    ```
 
-## Notes
+### Cloud Deployment
+- **AWS Elastic Beanstalk**: Upload deployment package
+- **Azure App Service**: Deploy via Visual Studio or Azure CLI
+- **Google Cloud Run**: Use Docker container
 
-- The application includes sample invoice data that is seeded automatically
-- CORS is configured to allow all origins (configure appropriately for production)
-- The database is created automatically on first run
+## 📸 Screenshots Directory
+
+To add screenshots to this README:
+
+1. Create a `screenshots/` directory in your project
+2. Take screenshots of:
+   - Main application UI (`invoice-ui.png`)
+   - Swagger API documentation (`swagger-api.png`)
+   - API response in browser/Postman (`api-response.png`)
+3. Place them in the `screenshots/` folder
+
+## 📝 Notes
+
+- ✅ The application includes sample invoice data that is seeded automatically
+- ⚠️ CORS is configured to allow all origins (configure appropriately for production)
+- ✅ The database is created automatically on first run
+- ✅ Docker support included for easy deployment
+- ✅ Production-ready configuration
