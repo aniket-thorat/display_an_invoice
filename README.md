@@ -60,23 +60,6 @@ _Interactive API documentation with testable endpoints_
    - **API Documentation (Swagger):** http://localhost:5000/swagger
    - **API Endpoint:** http://localhost:5000/api/invoice
 
-### Option 2: Docker (Recommended)
-
-```bash
-# Using Docker Compose
-docker-compose up --build
-
-# Or using Docker directly
-docker build -t invoice-app .
-docker run -d -p 8080:80 --name invoice-app-container invoice-app
-```
-
-**Docker Access URLs:**
-
-- **Frontend:** http://localhost:8080
-- **Swagger:** http://localhost:8080/swagger
-- **API:** http://localhost:8080/api/invoice
-
 ## 🔌 API Endpoints
 
 ### Available Endpoints
@@ -88,24 +71,16 @@ docker run -d -p 8080:80 --name invoice-app-container invoice-app
 
 ```json
 {
-  "invoiceID": 1,
-  "customerName": "John Doe",
   "items": [
     {
-      "itemID": 1,
-      "invoiceID": 1,
       "name": "Widget A",
       "price": 19.99
     },
     {
-      "itemID": 2,
-      "invoiceID": 1,
       "name": "Widget B",
       "price": 29.99
     },
     {
-      "itemID": 3,
-      "invoiceID": 1,
       "name": "Widget C",
       "price": 39.99
     }
@@ -136,8 +111,7 @@ The application uses SQLite database with Entity Framework Core. The database fi
 │   ├── index.html
 │   ├── script.js
 │   └── styles.css
-├── Dockerfile           # Docker configuration
-├── docker-compose.yml   # Docker Compose setup
+├── Dockerfile           # Docker setup
 ├── Program.cs           # Application entry point
 ├── InvoiceApp.csproj    # Project file
 └── README.md           # This file
