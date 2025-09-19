@@ -14,16 +14,13 @@ This is a .NET 8 Web API application that displays invoice data with a web front
 ## 📱 Application Screenshots
 
 ### Main Invoice Display UI
-![Invoice Display UI](screenshots/invoice-ui.png)
+![Invoice Display UI](./screenshots/invoice_display.png)
 *The main application interface showing invoice details and items*
 
 ### Swagger API Documentation
-![Swagger API Documentation](screenshots/swagger-api.png)
+![Swagger API Documentation](./screenshots/swagger.png)
 *Interactive API documentation with testable endpoints*
 
-### API Response Example
-![API Response](screenshots/api-response.png)
-*Sample JSON response from the invoice API endpoint*
 
 ## Prerequisites
 
